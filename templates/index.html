@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Form</title>
+    <title>Calculator</title>
 </head>
 <body>
-    <h1>User Form</h1>
+    <!-- <h1>User Form</h1>
     <form method="post">
         <label for="name">Name:</label>
         <input type="text" id="name" name="name"><br><br>
@@ -19,6 +19,26 @@
         <h2>User Data:</h2>
         <p>Name: {{ user.name }}</p>
         <p>Email: {{ user.email }}</p>
+    {% endif %} -->
+
+    <h1>Basic Calculator</h1>
+    <form method="post">
+        <label for="value1">Value 1:</label>
+        <input type="number" name="value1" id="value1"><br><br>
+        <label for="operator">Operator:</label>
+        <select name="operator" id="operator">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+        </select><br><br>
+        <label for="value2">Value 2:</label>
+        <input type="number" name="value2" id="value2"><br><br>
+        <button type="submit">Calculate</button>
+    </form>
+    {% if result %}
+        <h2>Result:</h2>
+        <p>{{ result }}</p>
     {% endif %}
 </body>
 </html>
